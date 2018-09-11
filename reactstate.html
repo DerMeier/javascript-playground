@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui-react/0.82.4/semantic-ui-react.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+<script type="text/babel">
+    class SidebarNavigation extends React.Component {
+        state = { visible: false };
+
+        handleButtonClick = () => this.setState({ visible: !this.state.visible });
+
+        handleSidebarHide = () => this.setState({ visible: false });
+
+        handleItemClick = (e, { name }) => {
+            this.props.changePageHandler(name);
+            this.handleSidebarHide();
+        };
+
+        render() {
+            const { visible } = this.state;
+
+            return (
+                <div>
+                    <semanticUIReact.Segment basic={true}>
+                        <semanticUIReact.Button floated="right" onClick={this.handleButtonClick}>Toggle Menu</semanticUIReact.Button>
+                    </semanticUIReact.Segment>
+
+                    <semanticUIReact.Sidebar
+                        as={semanticUIReact.Menu}
+                        animation='overlay'
+                        icon='labeled'
+                        inverted
+                        onHide={this.handleSidebarHide}
+                        vertical
+                        visible={visible}
+                        width='thin'
+                    >
+                        <semanticUIReact.Menu.Item name='home' as='a' onClick={this.handleItemClick}>
+                            <semanticUIReact.Icon name='home' />
+                            Home
+                        </semanticUIReact.Menu.Item>
+                        <semanticUIReact.Menu.Item name='games' as='a' onClick={this.handleItemClick}>
+                            <semanticUIReact.Icon name='gamepad' />
+                            Games
+                        </semanticUIReact.Menu.Item>
+                        <semanticUIReact.Menu.Item name='pictures' as='a' onClick={this.handleItemClick}>
+                            <semanticUIReact.Icon name='camera' />
+                            Pictures
+                        </semanticUIReact.Menu.Item>
+                    </semanticUIReact.Sidebar>
+                </div>
+            )
+        }
+    }
+
+    const Home = props => (
+        <semanticUIReact.Segment basic>
+            <semanticUIReact.Header as='h3'>Home</semanticUIReact.Header>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+        </semanticUIReact.Segment>
+    );
+
+    const Games = props => (
+        <semanticUIReact.Segment basic>
+            <semanticUIReact.Header as='h3'>Games</semanticUIReact.Header>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+        </semanticUIReact.Segment>
+    );
+
+    const Pictures = props => (
+        <semanticUIReact.Segment basic>
+            <semanticUIReact.Header as='h3'>Pictures</semanticUIReact.Header>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+            <p>
+                Doggo ipsum very jealous pupper very taste wow he made many woofs you are doing me the shock the neighborhood pupper very good spot shoober, doggo very hand that feed shibe stop it fren such treat borking doggo, sub woofer length boy I am bekom fat fat boi very taste wow. pupperino dat tungg tho heckin. Doggorino blop thicc noodle horse puggorino corgo, boof ur givin me a spook lotsa pats. waggy wags the neighborhood pupper. Waggy wags what a nice floof heckin super chub snoot heckin angery woofer heckin wow such tempt, yapper doge dat tungg tho big ol pupper doing me a frighten. Heckin angery woofer wow such tempt puggo, mlem. Blop snoot very taste wow clouds many pats, doge wrinkler long doggo. Stop it fren big ol boofers ruff ur givin me a spook long water shoob clouds, dat tungg tho super chub doggorino most angery pupper I have ever seen. Sub woofer borking doggo smol length boy vvv doggo, doggorino heckin good boys very jealous pupper.
+            </p>
+        </semanticUIReact.Segment>
+    );
+
+    const NotFound = props => (
+        <semanticUIReact.Segment basic>
+            <semanticUIReact.Header as='h3'>Oops</semanticUIReact.Header>
+            <p>
+                Something went wrong...
+            </p>
+
+        </semanticUIReact.Segment>
+    );
+
+    class App extends React.Component {
+        /**
+         * @param {Object} props
+         */
+        constructor(props) {
+            super(props);
+
+            this.state = {
+                activePage: "home"
+            }
+        }
+
+        changeActivePage = (pageId) => this.setState({activePage: pageId});
+
+        render() {
+            const activePageContent = (() => {
+                if (this.state.activePage === "home") {
+                    return (<Home/>);
+                }
+                if (this.state.activePage === "games") {
+                    return (<Games/>);
+                }
+                if (this.state.activePage === "pictures") {
+                    return (<Pictures/>);
+                }
+                return (<NotFound/>);
+            })();
+            return (
+                <div>
+                    <SidebarNavigation changePageHandler={this.changeActivePage}/>
+                    {activePageContent}
+                </div>
+            );
+        };
+    }
+
+    ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+    );
+</script>
+</body>
+
+</html>
