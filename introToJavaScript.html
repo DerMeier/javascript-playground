@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const message="hallo Welt";
+        const root=document.getElementById("root");
+        root.innerHTML= message;
+        const zahlen = [1,2,3];
+        zahlen.forEach(zahl => {
+            let zahlPlus1 = zahl + 1;
+            console.log("ich bin eine arrow function",zahlPlus1);
+        });
+
+        zahlen.forEach(function(zahl) {
+            console.log('ich bin keine arrow function');
+        });
+
+        const addiereEins = function (zahl) {
+            const summe = zahl + 1;
+            console.log('ich bin eine Funktion in einer variable', summe);
+        };
+
+        zahlen.forEach(addiereEins);
+
+        const normaleFunctionMitGleichemEffektWieArrowFunction = function (parameterX) { console.log('hallo'); }.bind(this);
+    </script>
+</body>
+
+</html>
